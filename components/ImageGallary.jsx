@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import imagesData from "../Data/imageData";
-const ImageGallery =()=>{
+const ImageGallery =({addClickedImage})=>{
 
     return (
         <div>
             {
-                imagesData.map((image, value)=>(
-                    <img src={image.img_url} alt={image.alt}/>
+                imagesData.map((image)=>(
+                    <img src={image.img_url} alt={image.alt}
+                    onClick={()=>addClickedImage(image)}/>
+                   
                 ))
             }
         </div>
